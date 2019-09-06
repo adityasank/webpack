@@ -1,29 +1,32 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div>
+    <b-row class="mt-2">
+      <b-col md="8">
+        <BankOffers />
+      </b-col>
+
+      <b-col md="4">
+        <Coupons />
+      </b-col>
+    </b-row>
+
+    <b-row>
+      <b-col >
+        <my-cart />
+      </b-col>
+
+    </b-row>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import BankOffers from "@/components/Cart/BankOffers.vue";
+import Coupons from "@/components/Cart/Coupons.vue";
+import MyCart from "@/components/Cart/MyCart.vue";
+export default {
+  components: {
+    BankOffers,
+    Coupons,
+    MyCart,
   }
-}
-</style>
+};
+</script>
